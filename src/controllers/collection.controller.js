@@ -28,12 +28,12 @@ export const createCollection = asyncHandler(async (req, res) => {
     });
   });
   
-  /**
-   * @UPDATE_COLLECTION
-   * @route http://localhost:5000/api/collection/:collectionId
-   * @description Controller for updating the collection details
-   * @description Only admin can update the collection
-   */
+  
+  //  @UPDATE_COLLECTION
+  //  @route http://localhost:5000/api/collection/:collectionId
+  //  @description Controller for updating the collection details
+  //  @description Only admin can update the collection
+   
   
   export const updateCollection = asyncHandler(async (req, res) => {
     const { name } = req.body;
@@ -65,7 +65,7 @@ export const createCollection = asyncHandler(async (req, res) => {
     });
   });
   
-  /**
+  /*
    * @DELETE_COLLECTION
    * @route http://localhost:5000/api/collection/:collectionId
    * @description Controller for deleting the collection
@@ -80,14 +80,14 @@ export const createCollection = asyncHandler(async (req, res) => {
       throw new CustomError("Collection not found", 404);
     }
   
-    collectionToDelete.remove();
+    await collectionToDelete.remove();
     res.status(200).json({
       success: true,
       message: "Collection has been deleted successfully",
     });
   });
   
-  /**
+  /*
    * @GET_ALL_COLLECTION
    * @route http://localhost:5000/api/collection/
    * @description Controller for getting all collection list
