@@ -145,6 +145,12 @@ export const getProfile = asyncHandler(async (req, res) => {
 export const forgotPassword = asyncHandler(async (req, res) => {
     const {email} = req.body
     //no email
+
+    if (!email) {
+        
+        throw new CustomError("Email not found", 401)
+    }
+    
     const user = await User.findOne({email})
 
     if (!user) {

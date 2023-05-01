@@ -2,6 +2,7 @@ import Coupon from "../models/coupon.schema.js";
 import asyncHandler from "../service/asyncHandler.js";
 import CustomError from "../utils/customError.js";
 
+
 /**********************************************************
  * @CREATE_COUPON
  * @route https://localhost:5000/api/coupon

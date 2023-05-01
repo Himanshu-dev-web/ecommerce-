@@ -81,11 +81,11 @@ export const addProduct = asyncHandler(async (req, res) => {
             success: true,
             product,
         })
-
-
-        
+ 
     })
 })
+
+
 
 export const getAllProducts = asyncHandler(async (req, res) => {
     const products = await Product.find({})
