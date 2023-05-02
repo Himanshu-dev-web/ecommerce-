@@ -2,8 +2,8 @@ import Product from "../models/product.schema.js";
 import Coupon from "../models/coupon.schema.js";
 import Order from "../models/order.schema.js";
 import asyncHandler from "../service/asyncHandler.js";
-import CustomError from "../utils/customError.js";
 import razorpay from "../config/razorpay.config.js"
+import CustomError from "../utils/CustomError.js";
 
 export const generateRazorpayOrderId = asyncHandler(async (req, res) => {
     const {products, couponCode} = req.body
@@ -45,6 +45,7 @@ export const generateRazorpayOrderId = asyncHandler(async (req, res) => {
 
     if (!order) {
         throw new CustomError("UNable to generate order", 400)
+        
     }
 
     res.status(200).json({
